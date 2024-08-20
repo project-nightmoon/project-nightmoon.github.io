@@ -256,5 +256,8 @@ const splashes = [
   "Elevate your gameplay to new heights!",
   "Unleash your full potential with Nightmoon!",
   "Hack with precision and style!",
-  "Nightmoon: The future of hacking!"
+  "Nightmoon: The future of hacking!",
+  "Wanted by floppy!",
+  "Better than Horion!",
+  "And another L for pro Realms!"
 ]

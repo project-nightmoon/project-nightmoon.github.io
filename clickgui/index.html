@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIGHTMOON CLIENT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            overflow: hidden;
+        }
+        .container {
+            position: absolute;
+            left: -350px;
+            top: 0;
+            width: 350px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: left 0.3s;
+            padding: 10px;
+            border-right: 2px solid rgba(0, 128, 255, 0.7);
+        }
+        .banner {
+            width: 100%;
+            height: 65px;
+            background: url(https://github.com/project-nightmoon/project-nightmoon.github.io/blob/main/assets/nightmoon_client_title.png?raw=true);
+            background-size: cover;
+            border-bottom: 2px solid rgba(0, 128, 255, 0.7);
+        }
+        .show-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        .tab:hover, .tab:focus {
+            background: linear-gradient(90deg, #005bb5, #0084d4);
+            color: #fff;
+        }
+        .tab.active {
+            background: linear-gradient(90deg, #007bff, #00c6ff);
+            color: #fff;
+        }
+        .tab-content {
+            display: none;
+            margin-top: 10px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .hack-item {
+            padding: 10px;
+            margin: 5px 0;
+            background: rgba(51, 51, 51, 0.7);
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid rgba(128, 128, 128, 0.5);
+            transition: background 0.3s, color 0.3s;
+            position: relative;
+        }
+        .hack-item.active {
+            background: linear-gradient(90deg, #005bb5, #0084d4);
+            color: #fff;
+        }
+        .hack-item .arrow {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+        .arrow-up {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        .popup-dialogue {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(0, 128, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            z-index: 1001;
+        }
+        .popup-dialogue.active {
+            display: block;
+        }
+        .popup-header {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .popup-content {
+            margin-bottom: 20px;
+        }
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button class="show-btn" onclick="toggleMenu()">
+        Show GUI
+    </button>
+    <div class="container" id="gui-container">
+        <div class="banner"></div>
+        <div class="tabs">
+            <div class="tab active" onclick="toggleContent('combat'); toggleTab(this)">
+                <i class="fas fa-crosshairs"></i>
+            </div>
+            <div class="tab" onclick="toggleContent('movement'); toggleTab(this)">
+                <i class="fas fa-running"></i>
+            </div>
+            <div class="tab" onclick="toggleContent('visuals'); toggleTab(this)">
+                <i class="fas fa-eye"></i>
+            </div>
+            <div class="tab" onclick="toggleContent('player'); toggleTab(this)">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="tab" onclick="toggleContent('world'); toggleTab(this)">
+                <i class="fas fa-globe"></i>
+            </div>
+            <div class="tab" onclick="toggleContent('exploit'); toggleTab(this)">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="tab" onclick="toggleContent('client'); toggleTab(this)">
+                <i class="fas fa-cog"></i>
+            </div>
+        </div>
+        <div id="combat" class="tab-content active">
+            <div class="hack-item" onclick="toggleHack(this, 'Aura Settings')">Aura <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'AutoClicker Settings')">AutoClicker <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'CrystalAura Settings')">CrystalAura <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'TargetStrafe Settings')">TargetStrafe <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'PlayerTP Settings')">PlayerTP <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Hitbox Settings')">Hitbox <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Reach Settings')">Reach <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'FightBot Settings')">FightBot <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'AutoBow Settings')">AutoBow <i class="fas fa-chevron-right arrow"></i></div>
+        </div>
+        <div id="movement" class="tab-content">
+            <div class="hack-item" onclick="toggleHack(this, 'AirJump Settings')">AirJump <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'AutoTravel Settings')">AutoTravel <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'ElytraFly Settings')">ElytraFly <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Fly Settings')">Fly <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'InvMove Settings')">InvMove <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Speed Settings')">Speed <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Sprint Settings')">Sprint <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Freecam Settings')">Freecam <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Velocity Settings')">Velocity <i class="fas fa-chevron-right arrow"></i></div>
+        </div>
+        <div id="visuals" class="tab-content">
+            <div class="hack-item" onclick="toggleHack(this, 'Esp Settings')">Esp <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Camera Settings')">Camera <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'ShulkerPreview Settings')">ShulkerPreview <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'NewChunks Settings')">NewChunks <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'TrueSight Settings')">TrueSight <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'NoRender Settings')">NoRender <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Animation Settings')">Animation <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Hiteffect Settings')">Hiteffect <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'NbtInfo Settings')">NbtInfo <i class="fas fa-chevron-right arrow"></i></div>
+        </div>
+        <div id="player" class="tab-content">
+            <div class="hack-item" onclick="toggleHack(this, 'InvManager Settings')">InvManager <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Blink Settings')">Blink <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Teleport Settings')">Teleport <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'DeathPosition Settings')">DeathPosition <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'AutoMine Settings')">AutoMine <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'PacketMine Settings')">PacketMine <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'PacketEditor Settings')">PacketEditor <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Timer Settings')">Timer <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'BlockFinder Settings')">BlockFinder <i class="fas fa-chevron-right arrow"></i></div>
+        </div>
+        <div id="world" class="tab-content">
+            <div class="hack-item" onclick="toggleHack(this, 'Nuker Settings')">Nuker <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Scaffold Settings')">Scaffold <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Xray Settings')">Xray <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'ChestStealer Settings')">ChestStealer <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Cinematic Settings')">Cinematic <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'FastPlace Settings')">FastPlace <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'FastThrow Settings')">FastThrow <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'AutoGrief Settings')">AutoGrief <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'FastCmd Settings')">FastCmd <i class="fas fa-chevron-right arrow"></i></div>
+        </div>
+        <div id="exploit" class="tab-content">
+            <div class="hack-item" onclick="toggleHack(this, 'Crasher Settings')">Crasher <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'WorldCorrupt Settings')">WorldCorrupt <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'ForceOP Settings')">ForceOP <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'PlayerCrasher Settings')">PlayerCrasher <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'CustomSkin Settings')">CustomSkin <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Spammer Settings')">Spammer <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'PlayerCoords Settings')">PlayerCoords <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'ServerLogs Settings')">ServerLogs <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'DeviceSpoof Settings')">DeviceSpoof <i class="fas fa-chevron-right arrow"></i></div>
+        </div>
+        <div id="client" class="tab-content">
+            <div class="hack-item" onclick="toggleHack(this, 'ClickGui Settings')">ClickGui <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Hud Settings')">Hud <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'MiniMap Settings')">MiniMap <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Realm Database Settings')">Realm Database <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Chat Settings')">Chat <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Autocrash Settings')">Autocrash <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'Bancrash Settings')">Bancrash <i class="fas fa-chevron-right arrow"></i></div>
+            <div class="hack-item" onclick="toggleHack(this, 'AdminPanic Settings')">AdminPanic <i class="fas fa-chevron-right arrow"></i></div>
+        </div>
+    </div>
+
+    <div class="popup-dialogue" id="popup-dialogue">
+        <div class="popup-close" onclick="closePopup()">&times;</div>
+        <div class="popup-header">Settings</div>
+        <div class="popup-content" id="popup-content"></div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const container = document.getElementById('gui-container');
+            if (container.style.left === '0px') {
+                container.style.left = '-350px';
+            } else {
+                container.style.left = '0px';
+            }
+        }
+
+        function toggleContent(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function toggleTab(tab) {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tab.classList.add('active');
+        }
+
+        function toggleHack(hackElement, settingsText) {
+            hackElement.classList.toggle('active');
+            showPopup(settingsText);
+        }
+
+        function showPopup(settingsText) {
+            const popup = document.getElementById('popup-dialogue');
+            const popupContent = document.getElementById('popup-content');
+            popupContent.innerText = settingsText;
+            popup.classList.add('active');
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('popup-dialogue');
+            popup.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
