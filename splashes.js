@@ -1,11 +1,22 @@
 const splashes = [
   "Wanted by floppy!",
   "Better than Horion!",
-  "And another L for pro Realms!",
   "I just lost my dog!",
   "You can't crack Nightmoon!",
   "It was bunnytofonfootington, I swear!",
   "Can I get it for free?",
   "iOS version when",
-  "ARASR steals your information!"
+  "ARASR steals your information!",
+  "Floppy busy on IDA 👀",
+  "Horion's Killaura xD",
+  "This isn't a charity",
+  "IOS? LOL",
+  "ARASR wants your mothers credit card",
+  "100% Minecraft Vanilla",
+  "Overmind_ was here!",
+  "Be a real Goatster!",
+  "Grass is yummy!",
+  "Fish 🐟",
+  "Here in 2024!",
+  "Marketplace is a scam!
 ]
