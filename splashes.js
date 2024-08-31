@@ -18,5 +18,5 @@ const splashes = [
   "Grass is yummy!",
   "Fish 🐟",
   "Here in 2024!",
-  "Marketplace is a scam!
+  "Marketplace is a scam!"
 ]
