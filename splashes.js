@@ -5,8 +5,6 @@ const splashes = [
   "I just lost my dog!",
   "You can't crack Nightmoon!",
   "It was bunnytofonfootington, I swear!",
-  "Skibidi in ohio!",
-  "Nightgoon when?",
   "Can I get it for free?",
   "iOS version when",
   "ARASR steals your information!"
