@@ -34,8 +34,6 @@ const splashes = [
   "L pina",
   "L obaq",
   "L TSL Tobi",
-  "L adgods",
-  "L nova ghoul",
   "Dig straight down!",
   "Ares Utility 🤝 Nightmoon",
   "Please respect the sigma -Purpleish, 2024",
