@@ -39,6 +39,6 @@ const splashes = [
   "Please respect the sigma -Purpleish, 2024",
   "Put that cookie down!! -Purpleish, 2024",
   "No -Nornide",
-  "It's just a horion skid -Borion Dev Team",
+  "It's just a Horion skid -Borion Dev Team",
   "ducks are cool"
 ]
