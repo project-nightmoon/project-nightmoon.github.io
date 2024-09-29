@@ -183,27 +183,6 @@
     const countdown = document.getElementById("countdown");
     const countdownTime = Date.UTC(2025, 0, 1, 5);
 
-    // Countdown
-    const countdownInterval = setInterval(() => {
-        let dateNow = Date.now();
-
-        if (dateNow > countdownTime) {
-            document.getElementById("countdown").hidden = true;
-            document.getElementById("downloadButton").classList.remove("disabled");
-            document.getElementById("purchaseButton").classList.remove("disabled");
-            clearInterval(countdownInterval);
-        };
-
-        let distance = countdownTime - dateNow;
-        let months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
-        let days = Math.floor(distance / (1000 * 60 * 60 * 24) - (months * 30));
-        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // countdown.textContent = `Expected release: ${months}m ${days}d ${hours}:${minutes}:${seconds} / ${new Date(countdownTime).toDateString()}`;
-        countdown.textContent = `${months}m ${days}d ${hours}:${minutes}:${seconds}`;
-    }, 100);
 
     header.style.top = "-1000px";
     document.getElementById("splash").textContent = getRandomSplashText();
