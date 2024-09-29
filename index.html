@@ -172,8 +172,8 @@
             width: 90%;
         }
     }
-    
-        function getRandomSplashText() {
+<script>
+    function getRandomSplashText() {
         return splashes[Math.floor(Math.random() * splashes.length)];
     };
     const header = document.querySelector("header");
@@ -182,4 +182,5 @@
     header.style.top = "-1000px";
     document.getElementById("splash").textContent = getRandomSplashText();
     console.log(document.getElementById("splash").textContent);
+</script>
 </style>
