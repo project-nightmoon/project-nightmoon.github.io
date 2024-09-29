@@ -172,4 +172,14 @@
             width: 90%;
         }
     }
+    
+        function getRandomSplashText() {
+        return splashes[Math.floor(Math.random() * splashes.length)];
+    };
+    const header = document.querySelector("header");
+    const countdown = document.getElementById("countdown");
+    const countdownTime = Date.UTC(2025, 0, 1, 5);
+    header.style.top = "-1000px";
+    document.getElementById("splash").textContent = getRandomSplashText();
+    console.log(document.getElementById("splash").textContent);
 </style>
