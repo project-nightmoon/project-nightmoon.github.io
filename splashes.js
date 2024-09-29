@@ -1,4 +1,4 @@
 const splashes = [
   "Wanted by floppy!",
-"Marketplace is a scam"
+  "Marketplace is a scam",
 ]
