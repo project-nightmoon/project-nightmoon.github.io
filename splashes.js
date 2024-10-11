@@ -4,5 +4,5 @@ const splashes = [
   "P2WIN is against Mojang Tos",
   ".gg/nightmoon",
   "Official Realm Support!",
-  "I just lost my dawg",
+  "I just lost my dawg",fd
 ]
