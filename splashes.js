@@ -5,5 +5,4 @@ const splashes = [
   ".gg/nightmoon",
   "Official Realm Support!",
   "I just lost my dawg",
-  testy
 ]
