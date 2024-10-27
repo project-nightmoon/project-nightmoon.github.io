@@ -1,5 +1,6 @@
 const splashes = [
-  "Wanted by floppy!",
+  "Greetings from The Fifth Column!",
+  "Aras doesnt protect you",
   "Marketplace is a scam",
   "P2WIN is against Mojang Tos",
   ".gg/nightmoon",
