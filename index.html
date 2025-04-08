@@ -159,8 +159,8 @@
             height: 100%;
             z-index: -1;
             background-image: 
-                linear-gradient(rgba(255, 215, 0, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 215, 0, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(255, 215, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 215, 255, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
             background-position: center center;
         }
@@ -218,7 +218,7 @@
             height: 60%;
             top: 20%;
             left: 20%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(255, 215, 215, 0.1) 0%, rgba(255, 215, 0, 255) 70%);
             filter: blur(50px);
             z-index: -1;
             animation: pulse 10s infinite alternate;
@@ -250,7 +250,7 @@
             background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 215, 215, 0.1);
         }
 
         .navbar.scrolled {
@@ -268,7 +268,7 @@
         .navbar-logo {
             height: 40px;
             width: auto;
-            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+            filter: drop-shadow(0 0 5px rgba(255, 215, 215, 0.5));
         }
 
         .navbar-brand-text {
@@ -489,7 +489,7 @@
 
         .feature-card {
             background: rgba(18, 18, 18, 0.7);
-            border: 1px solid rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 255, 0.1);
             border-radius: 12px;
             padding: 2rem;
             transition: all var(--transition-medium);
@@ -513,13 +513,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), transparent);
+            background: linear-gradient(135deg, rgba(255, 215, 215, 0.1), transparent);
             z-index: -1;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 215, 215, 0.2);
             border-color: rgba(255, 215, 0, 0.3);
         }
 
@@ -559,7 +559,7 @@
         .stat-item {
             padding: 2rem;
             background: rgba(18, 18, 18, 0.7);
-            border: 1px solid rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 215, 0.1);
             border-radius: 12px;
             transition: all var(--transition-medium);
             transform: translateY(30px);
@@ -572,7 +572,7 @@
 
         .stat-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 215, 215, 0.2);
             border-color: rgba(255, 215, 0, 0.3);
         }
 
@@ -604,9 +604,9 @@
             margin: 0 auto;
             background: rgba(5, 5, 5, 0.9);
             border-radius: 12px;
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(255, 215, 255, 0.2);
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 215, 0.2);
             transform: translateY(30px);
             opacity: 0;
         }
@@ -620,7 +620,7 @@
             padding: 0.75rem 1rem;
             display: flex;
             align-items: center;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 215, 255, 0.2);
         }
 
         .terminal-buttons {
@@ -793,7 +793,7 @@
         .btn-success:hover {
             background: var(--success-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 215, 255, 0.4);
         }
 
         .btn-gradient {
@@ -804,7 +804,7 @@
         .btn-gradient:hover {
             background: linear-gradient(90deg, var(--primary-dark), var(--primary));
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 215, 255, 0.4);
         }
 
         .btn-outline {
@@ -816,7 +816,7 @@
         .btn-outline:hover {
             background: rgba(255, 215, 0, 0.1);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 6px 20px rgba(255, 215, 255, 0.2);
         }
 
         .btn.disabled {
@@ -842,7 +842,7 @@
             background: var(--darkest);
             position: relative;
             z-index: 10;
-            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            border-top: 1px solid rgba(255, 215, 215, 0.1);
         }
 
         .footer-content {
@@ -910,14 +910,14 @@
         .social-icon:hover {
             background: var(--primary);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 215, 215, 0.3);
         }
 
         .footer-bottom {
             max-width: 1200px;
             margin: 0 auto;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            border-top: 1px solid rgba(255, 215, 215, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -972,7 +972,7 @@
             border-radius: 12px;
             width: 90%;
             max-width: 500px;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 30px rgba(255, 215, 215, 0.3);
             border: 1px solid rgba(255, 215, 0, 0.2);
             overflow: hidden;
             transform: scale(0.9);
@@ -981,7 +981,7 @@
 
         .modal-header {
             padding: 1.5rem;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 215, 215, 0.2);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1014,7 +1014,7 @@
 
         .modal-footer {
             padding: 1rem 1.5rem;
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            border-top: 1px solid rgba(255, 215, 215, 0.2);
             display: flex;
             justify-content: flex-end;
             gap: 1rem;
